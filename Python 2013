@@ -1,0 +1,33 @@
+# About a year after first doing this problem in java, I coded this up in python 
+# --> python is awesomely easy for string/list processing!
+
+#!/usr/bin/python
+# google code jam qualification round 2010
+# written Feb 1st 2013
+#in_file = open("B-large-practice.in", "r")
+#out_file = open("B-large-practice.out", "w")
+in_file = open("B-small-practice.in", "r")
+out_file = open("B-small-practice.out", "w")
+
+
+i = 0
+n = 0
+for line in in_file:
+  if i == 0:
+		n = int(line.strip())
+	else:
+		line = line.strip()
+		words = line.split(" ")
+		words.reverse()
+		out_file.write("Case #" + str(i) + ":",)
+		for word in words: 
+			out_file.write(" " + word)
+		out_file.write("\n")
+	i = i + 1
+
+in_file.close()
+out_file.close()
+
+#lolwhut - JMS
+#open("B-small-practice.out", "w").write(''.join(["Case #%d: %s\n" % (i+1,obj) for (i,obj) in enumerate((' '.join(reversed(line.strip().split(' '))) for line in open("B-small-practice.in", "r").readlines()[1:]))]))
+
